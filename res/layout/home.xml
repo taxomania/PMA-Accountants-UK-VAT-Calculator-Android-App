@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:padding="10dp"
+    android:background="@color/white" android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <ImageView android:src="@drawable/pmalogo"
+        android:paddingTop="10dp" android:layout_centerHorizontal="true"
+        android:layout_gravity="center" android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:id="@+id/logo" />
+    <TextView android:text="@string/website" android:layout_below="@+id/logo"
+        android:textColor="@color/black" android:id="@+id/website"
+        android:paddingTop="10dp" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:gravity="center" />
+    <TextView android:text="@string/tel" android:layout_below="@+id/website"
+        android:textColor="@color/black" android:id="@+id/tel"
+        android:paddingTop="1dp" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:gravity="center" />
+    <TextView android:text="@string/fax" android:layout_below="@+id/tel"
+        android:textColor="@color/black" android:id="@+id/fax"
+        android:paddingTop="1dp" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:gravity="center" />
+    <TextView android:text="@string/email" android:layout_below="@+id/fax"
+        android:textColor="@color/black" android:id="@+id/email"
+        android:paddingTop="1dp" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:gravity="center" />
+
+    <TableLayout android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content" android:layout_width="fill_parent"
+        android:id="@+id/tableLayout1">
+        <TableRow>
+            <Button android:text="Information" android:onClick="info"
+                android:layout_column="0" android:id="@+id/infobutton"
+                android:layout_height="wrap_content" android:layout_weight="0.2"
+                android:layout_alignParentBottom="true" android:layout_width="fill_parent" />
+            <Button android:text="Email Us" android:onClick="email"
+                android:layout_column="1" android:id="@+id/emailbutton"
+                android:layout_height="wrap_content" android:layout_weight="1.3"
+                android:layout_alignParentBottom="true" android:layout_width="fill_parent" />
+            <Button android:text="Call Us" android:onClick="call"
+                android:layout_column="2" android:id="@+id/callbutton"
+                android:layout_height="wrap_content" android:layout_weight="2.1"
+                android:layout_alignParentBottom="true" android:layout_width="fill_parent" />
+        </TableRow>
+    </TableLayout>
+    <Button android:onClick="VAT" android:id="@+id/vatbutton"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:text="VAT Calculator" android:layout_above="@+id/tableLayout1"
+        android:layout_alignParentLeft="true"></Button>
+</RelativeLayout>

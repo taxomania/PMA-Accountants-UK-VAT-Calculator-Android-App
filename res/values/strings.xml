@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, VATFormActivity!</string>
+    <string name="app_name">UK VAT Calculator</string>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <string name="tel">Tel: 0844 357 3646</string>
+    <string name="fax">Fax: 0844 774 4516</string>
+    <string name="email">info@pmaaccountants.co.uk</string>
+    <string name="website">www.pmaaccountants.co.uk</string>
+    <string name="current">Current VAT Rates and Thresholds</string>
+    <color name="blue">#0000FF</color>
+    <string name="main">VAT Calculator</string>
+</resources>

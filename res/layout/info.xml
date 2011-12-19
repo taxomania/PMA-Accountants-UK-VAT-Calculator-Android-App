@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:padding="10dp"
+    android:orientation="vertical" android:background="@color/white"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+    <TextView android:textColor="@color/black" android:id="@+id/text2"
+        android:layout_below="@+id/table1" android:layout_margin="5dp" android:textSize="15dp"
+        android:paddingTop="5dp" android:layout_column="0"
+        android:text="@string/current" android:gravity="center" android:textStyle="bold"
+        android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <TableLayout android:layout_width="fill_parent" android:paddingTop="10dp" android:layout_marginTop="2dp"
+        android:layout_below="@+id/text2" android:id="@+id/table2"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
+        android:stretchColumns="0,1" android:layout_marginRight="20dp">
+        <TableRow android:layout_height="wrap_content"
+            android:layout_width="fill_parent">
+            <TextView android:textColor="@color/black"
+                android:layout_marginLeft="4dp" android:layout_column="0"
+                android:text="Registration threshold" android:textSize="12dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content" android:gravity="right"
+                android:textColor="@color/black" android:id="@+id/reg"
+                android:textSize="12dp" android:paddingLeft="10dp"></TextView>
+        </TableRow>
+        <TableRow android:layout_height="wrap_content"
+            android:layout_width="fill_parent">
+            <TextView android:textColor="@color/black"
+                android:layout_marginLeft="4dp" android:layout_column="0"
+                android:text="Deregistration threshold" android:textSize="12dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content" android:gravity="right"
+                android:textColor="@color/black" android:id="@+id/dereg"
+                android:textSize="12dp" android:paddingLeft="10dp"></TextView>
+        </TableRow>
+        <TableRow android:layout_height="wrap_content"
+            android:layout_width="fill_parent">
+            <TextView android:textColor="@color/black"
+                android:layout_marginLeft="4dp" android:layout_column="0"
+                android:text="Annual accounting threshold up to" android:textSize="12dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content" android:gravity="right"
+                android:textColor="@color/black" android:id="@+id/acc"
+                android:textSize="12dp" android:paddingLeft="10dp"></TextView>
+        </TableRow>
+        <TableRow android:layout_height="wrap_content"
+            android:layout_width="fill_parent">
+            <TextView android:textColor="@color/black"
+                android:layout_marginLeft="4dp" android:layout_column="0"
+                android:text="Cash accounting scheme up to" android:textSize="12dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="wrap_content" android:gravity="right"
+                android:textColor="@color/black" android:id="@+id/cash"
+                android:textSize="12dp" android:paddingLeft="10dp"></TextView>
+        </TableRow>
+        <TableRow android:layout_height="wrap_content"
+            android:layout_width="fill_parent">
+            <TextView android:textColor="@color/black"
+                android:layout_marginLeft="4dp" android:layout_column="0"
+                android:text="Standard VAT current rate" android:textSize="12dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:layout_width="fill_parent"
+                android:textSize="12dp" android:gravity="right"
+                android:layout_height="wrap_content" android:textColor="@color/black"
+                android:id="@+id/standard" android:paddingLeft="10dp"></TextView>
+        </TableRow>
+        <TableRow android:layout_height="wrap_content"
+            android:layout_width="fill_parent">
+            <TextView android:textColor="@color/black"
+                android:layout_marginLeft="4dp" android:layout_column="0"
+                android:text="Reduced rate" android:textSize="12dp"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:layout_width="fill_parent"
+                android:gravity="right" android:layout_height="wrap_content"
+                android:textColor="@color/black" android:id="@+id/red"
+                android:textSize="12dp" android:paddingLeft="10dp"></TextView>
+        </TableRow>
+
+    </TableLayout>
+</RelativeLayout>

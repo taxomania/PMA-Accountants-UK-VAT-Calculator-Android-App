@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:padding="10dp" android:background="@color/white"
+    android:layout_above="@+id/view" android:orientation="vertical">
+    <TextView android:text="@string/main" android:textColor="@color/black"
+        android:paddingTop="5dp" android:id="@+id/id1" android:layout_width="fill_parent"
+        android:gravity="center" android:layout_margin="5dp" android:textSize="15dp"
+        android:layout_height="wrap_content" android:textStyle="bold" />
+    <ScrollView android:layout_height="wrap_content"
+        android:layout_width="fill_parent" android:layout_below="@+id/id1">
+        <TableLayout android:layout_width="fill_parent"
+            android:id="@+id/table1" android:layout_height="wrap_content"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_centerHorizontal="true" android:layout_marginTop="2dp"
+            android:layout_marginRight="10dp" android:paddingTop="10dp">
+
+            <TableRow android:layout_height="wrap_content"
+                android:layout_width="fill_parent" android:baselineAligned="true">
+                <TextView android:textColor="@color/black" android:gravity="right"
+                    android:layout_weight="2" android:layout_column="0"
+                    android:text="Starting figure (£)" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_gravity="center_vertical" />
+                <EditText android:layout_width="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:layout_marginLeft="20dp" android:layout_height="wrap_content"
+                    android:textColor="@color/black" android:id="@+id/edittext"
+                    android:paddingLeft="20dp"></EditText>
+            </TableRow>
+
+            <TableRow android:layout_height="wrap_content"
+                android:layout_width="fill_parent" android:layout_marginTop="10dp">
+                <TextView android:textColor="@color/black" android:gravity="right"
+                    android:layout_weight="2" android:layout_column="0"
+                    android:text="Does this figure already include VAT?"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <RadioGroup android:layout_column="1"
+                     android:layout_marginLeft="20dp"
+                    android:layout_width="fill_parent">
+                    <RelativeLayout android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                        <RadioButton android:id="@+id/yesRadio"
+                            android:textColor="@color/black" android:layout_height="wrap_content"
+                            android:text="Yes" android:layout_width="wrap_content"
+                            android:onClick="toggleRadio"></RadioButton>
+                        <RadioButton android:id="@+id/noRadio"
+                            android:layout_toRightOf="@+id/yesRadio" android:textColor="@color/black"
+                            android:checked="true" android:layout_marginLeft="10dp"
+                            android:layout_height="wrap_content" android:text="No"
+                            android:layout_width="wrap_content" android:onClick="toggleRadio"></RadioButton>
+                    </RelativeLayout>
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow android:layout_height="wrap_content"
+                android:layout_width="fill_parent" android:layout_marginTop="10dp">
+                <TextView android:textColor="@color/black" android:gravity="right" android:layout_weight="2"
+                    android:layout_column="0" android:text="Standard or reduced VAT rate?"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <RadioGroup android:layout_column="1"
+                    android:layout_marginLeft="20dp" android:layout_width="fill_parent">
+                    <RelativeLayout android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+                        <RadioButton android:id="@+id/yesRadioVAT"
+                            android:checked="true" android:textColor="@color/black"
+                            android:layout_height="wrap_content" android:layout_width="wrap_content"
+                            android:onClick="toggleVATRadio"></RadioButton>
+                        <RadioButton android:textColor="@color/black"
+                            android:id="@+id/noRadioVAT" android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:onClick="toggleVATRadio"
+                            android:layout_alignRight="@+id/noRadio"
+                            android:layout_alignParentRight="true"></RadioButton>
+                    </RelativeLayout>
+                </RadioGroup>
+            </TableRow>
+
+            <TableRow android:layout_width="fill_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="10dp">
+                <Button android:text="Reset" android:layout_column="0" android:layout_weight="2"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:onClick="reset" android:id="@+id/reset" />
+                <Button android:text="Submit" android:layout_column="1"
+                    android:id="@+id/submit" android:layout_marginLeft="20dp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:onClick="submit" />
+            </TableRow>
+
+            <TableRow android:layout_height="wrap_content"
+                android:layout_width="fill_parent" android:layout_marginTop="50dp">
+                <TextView android:textColor="@color/black" android:gravity="right" android:layout_weight="2"
+                    android:textStyle="bold" android:layout_column="0" android:text="Net Amount"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:layout_width="fill_parent"
+                    android:gravity="right" android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content" android:textColor="@color/black"
+                    android:id="@+id/net" android:paddingRight="20dp"></TextView>
+            </TableRow>
+
+
+            <TableRow android:layout_height="wrap_content"
+                android:layout_width="fill_parent" android:layout_marginTop="10dp">
+                <TextView android:textColor="@color/black" android:gravity="right" android:layout_weight="2"
+                    android:textStyle="bold" android:id="@+id/vatAt"
+                    android:layout_column="0" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView android:layout_width="fill_parent"
+                    android:gravity="right" android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content" android:textColor="@color/black"
+                    android:id="@+id/vat" android:paddingRight="20dp"></TextView>
+            </TableRow>
+
+
+            <TableRow android:layout_height="wrap_content"
+                android:layout_width="fill_parent" android:layout_marginTop="10dp">
+                <TextView android:textColor="@color/black" android:gravity="right"
+                    android:layout_column="0" android:text="Gross Amount" android:layout_weight="2"
+                    android:textStyle="bold" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView android:layout_width="fill_parent"
+                    android:gravity="right" android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content" android:textColor="@color/black"
+                    android:id="@+id/gross" android:paddingRight="20dp"></TextView>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+</RelativeLayout>
