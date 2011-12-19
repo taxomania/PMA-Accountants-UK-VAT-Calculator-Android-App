@@ -8,8 +8,9 @@ import java.util.Locale;
 public class Functions {
     public static List<String> calculateVAT(final double start, final boolean vat_applied,
             final double rate) {
-        double net = 0, gross = 0, vat = 0;
-
+        final double gross;
+        final double net;
+        final double vat;
         if (vat_applied) {
             gross = start;
             final double percent = 100.0 + rate;
@@ -19,7 +20,7 @@ public class Functions {
             net = start;
             vat = net / 100.0 * rate;
             gross = vat + net;
-        }
+        } // else
 
         final NumberFormat nf = NumberFormat.getCurrencyInstance(Locale.UK);
         final List<String> vals = new ArrayList<String>();
@@ -28,5 +29,5 @@ public class Functions {
         vals.add(nf.format(gross));
 
         return vals;
-    }
-}
+    } // calculateVAT(double, boolean, double)
+} // Functions
